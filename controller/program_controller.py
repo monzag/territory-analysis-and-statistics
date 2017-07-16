@@ -1,6 +1,7 @@
 import sys
 import os
 from collections import Counter
+from operator import itemgetter
 
 from model.territory import Territory
 from model.provinces import Province
@@ -197,6 +198,7 @@ def check_empty_list(list_of_search_result):
     if len(list_of_search_result) < 1:
         view.print_message('Not found')
     else:
+        list_of_search_result = sorted(list_of_search_result, key=itemgetter(0, 1))
         view.print_table(list_of_search_result)
 
 
