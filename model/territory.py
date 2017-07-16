@@ -43,7 +43,7 @@ class Territory:
 
         with open(file_path, 'r') as csvfile:
             read_data = csvfile.readlines()[1:]
-            splitted_rows = [line.replace('\n', '').split('|') for line in read_data]
+            splitted_rows = [line.replace('\n', '').strip().split('|') for line in read_data]
 
             for row in splitted_rows:
                 splitted_data_inside_row = [string.split('\t') for string in row]
