@@ -55,7 +55,8 @@ def print_list_of_object(list_of_object):
     for item in list_of_object:
         list_of_data_object.append([item.number, item.name, item.type])
 
-    print_table(list_of_data_object)
+    if len(list_of_object) > 0:
+        print_table(list_of_data_object)
 
 
 def print_message(text):
